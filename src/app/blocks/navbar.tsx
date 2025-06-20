@@ -3,11 +3,20 @@
 import * as React from "react"
 import Link from "next/link"
 import { Montserrat } from "next/font/google";
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     subsets: ["latin"],
-  });
+});
 
 import {
     NavigationMenu,
@@ -58,12 +67,13 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavigationMenuDemo() {
+
     return (
-        <div className="flex flex-row justify-center items-center p-5">
-            <div>
+        <div className="flex flex-row justify-between items-center shadow-[0_0.5px_0_rgba(0,0,0,0.2)] p-4 bg-white">
+            <div className="w-1/6">
 
             </div>
-            <NavigationMenu viewport={false}>
+            <NavigationMenu viewport={false} className="w-4/6">
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger className="montserrat">Home</NavigationMenuTrigger>
@@ -152,8 +162,22 @@ export function NavigationMenuDemo() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className="">
-
+            <div className="w-1/6">
+                <Select>
+                    <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Select a Language" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            <SelectLabel>English</SelectLabel>
+                            <SelectItem value="apple">Apple</SelectItem>
+                            <SelectItem value="banana">Banana</SelectItem>
+                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                            <SelectItem value="grapes">Grapes</SelectItem>
+                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
             </div>
         </div>
     )
