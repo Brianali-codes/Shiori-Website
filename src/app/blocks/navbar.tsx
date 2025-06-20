@@ -12,6 +12,8 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import Menu from "@/components/ui/menu"
+
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -70,10 +72,10 @@ export function NavigationMenuDemo() {
 
     return (
         <div className="flex flex-row justify-between items-center shadow-[0_0.5px_0_rgba(0,0,0,0.2)] p-4 bg-white">
-            <div className="w-1/6">
+            <div className="w-2/6">
 
             </div>
-            <NavigationMenu viewport={false} className="w-4/6">
+            <NavigationMenu viewport={false} className="w-2/6">
                 <NavigationMenuList>
                     <NavigationMenuItem>
                         <NavigationMenuTrigger className="montserrat">Home</NavigationMenuTrigger>
@@ -162,22 +164,23 @@ export function NavigationMenuDemo() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className="w-1/6">
+            <div className="w-2/6 flex flex-row justify-center items-center gap-5">
                 <Select>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Select a Language" />
                     </SelectTrigger>
                     <SelectContent>
                         <SelectGroup>
-                            <SelectLabel>English</SelectLabel>
-                            <SelectItem value="apple">Apple</SelectItem>
-                            <SelectItem value="banana">Banana</SelectItem>
-                            <SelectItem value="blueberry">Blueberry</SelectItem>
-                            <SelectItem value="grapes">Grapes</SelectItem>
-                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                            <SelectLabel>Laguage</SelectLabel>
+                            <SelectItem value="apple">English</SelectItem>
+                            <SelectItem value="banana">German</SelectItem>
+                            <SelectItem value="blueberry">French</SelectItem>
+                            <SelectItem value="grapes">Spanish</SelectItem>
+                            <SelectItem value="pineapple">Portuguese</SelectItem>
                         </SelectGroup>
                     </SelectContent>
                 </Select>
+                <Menu/>
             </div>
         </div>
     )
